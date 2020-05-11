@@ -1,0 +1,42 @@
+﻿@model List<PROYECTO_MVC.Models.Pelicula>
+
+
+@{
+    ViewBag.Title = "About";
+    string nombre = "felipe";
+    int numero = 19;
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<h5>@nombre</h5>
+<h5>mi edad @numero</h5>
+
+<h1>@Model[0].Titulo</h1>
+
+<table class="table"> <!--Class ="table" es del uso de boostrap-->
+    <thead> <!--Thead it is tittle-->
+        <tr>
+            <th>Titulo</th>
+            <th>Duracion</th>
+            <th>Pais</th>
+            <th>Lanzamiento</th>
+        </tr>
+    </thead>
+   
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.Titulo</td>
+                <td>@v.Duracion</td>
+                <td>@v.Pais</td>
+                <td>@v.Publicacion.ToString("dd-MM-yyyy")</td>
+            </tr>
+        }  
+
+</table>
+
+
+
